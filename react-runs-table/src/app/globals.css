@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Colour tokens. Every tone has an icon and a word next to it; colour is never the only signal.
+   Text tones are ≥ 4.5:1 on their background in both themes. */
+@theme {
+  --color-ink: #1b1f24;
+  --color-muted: #5b6470;
+  --color-line: #dde1e6;
+  --color-surface: #ffffff;
+  --color-page: #f6f7f9;
+  --color-track: #e7eaee;
+
+  --color-critical: #c62828;
+  --color-critical-bg: #fdecec;
+  --color-critical-text: #9b1c1c;
+  --color-warning: #d98a00;
+  --color-warning-bg: #fff4dc;
+  --color-warning-text: #8a4b00;
+  --color-ok: #2e7d4f;
+  --color-ok-bg: #e8f5ee;
+  --color-ok-text: #1d5c38;
+  --color-neutral: #3b6fb6;
+  --color-neutral-bg: #e9f0fa;
+  --color-neutral-text: #24528f;
+
+  --font-sans: "Heebo", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink: #e8eaed;
+    --color-muted: #a3acb8;
+    --color-line: #333a44;
+    --color-surface: #1b2027;
+    --color-page: #12161b;
+    --color-track: #2b323c;
+    --color-critical-bg: #3a1717;
+    --color-critical-text: #ff9b9b;
+    --color-warning-bg: #3a2a0c;
+    --color-warning-text: #ffc766;
+    --color-ok-bg: #12301f;
+    --color-ok-text: #86d9a6;
+    --color-neutral-bg: #16263d;
+    --color-neutral-text: #9cc2f5;
+  }
+}
+
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 3px,
+    color-mix(in srgb, var(--color-surface) 70%, transparent) 3px 6px
+  );
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+}

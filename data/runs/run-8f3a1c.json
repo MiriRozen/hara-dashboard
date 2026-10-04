@@ -1,0 +1,133 @@
+{
+  "run_id": "run-8f3a1c",
+  "title": "מיפוי מתחרים בשוק ניהול הפרויקטים",
+  "requested_by": "אורית ל.",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "0.500000",
+  "approved_budget_usd": "0.500000",
+  "spent_usd": "0.087430",
+  "started_at": "2026-08-17T09:12:04Z",
+  "ended_at": "2026-08-17T09:14:51Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.061200",
+      "started_at": "2026-08-17T09:12:05Z",
+      "ended_at": "2026-08-17T09:13:58Z",
+      "visible_summary": "נאספו 14 מקורות על חמישה מתחרים"
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "אנליסט תמחור",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.018100",
+      "started_at": "2026-08-17T09:13:58Z",
+      "ended_at": "2026-08-17T09:14:30Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.008130",
+      "started_at": "2026-08-17T09:14:30Z",
+      "ended_at": "2026-08-17T09:14:51Z",
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H8F3A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.075400",
+      "actual_usd": "0.061200",
+      "settled": true,
+      "usage": {
+        "input_tokens": 452,
+        "output_tokens": 3180,
+        "cache_read_tokens": 21234,
+        "cache_creation_tokens": 0,
+        "web_search_count": 3,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 4
+      }
+    },
+    {
+      "operation_id": "01H8F3B:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.030000",
+      "actual_usd": "0.018100",
+      "settled": true,
+      "usage": {
+        "input_tokens": 1890,
+        "output_tokens": 940,
+        "cache_read_tokens": 4100,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01H8F3C:t0",
+      "node_id": "n3",
+      "estimated_usd": "0.021000",
+      "actual_usd": "0.008130",
+      "settled": true,
+      "usage": {
+        "input_tokens": 2240,
+        "output_tokens": 610,
+        "cache_read_tokens": 3900,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 3000,
+        "max_searches_cap": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-17T09:12:04Z",
+      "type": "budget_reserved",
+      "payload": {
+        "scope": "run-8f3a1c",
+        "amount_usd": "0.075400"
+      }
+    },
+    {
+      "at": "2026-08-17T09:13:58Z",
+      "type": "web_search_performed",
+      "payload": {
+        "count": 3,
+        "source_count": 14
+      }
+    },
+    {
+      "at": "2026-08-17T09:14:51Z",
+      "type": "llm_call",
+      "payload": {
+        "turns": 3
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-17T09:12:04Z",
+      "ceiling_usd": "0.500000",
+      "reason": "initial_approval"
+    }
+  ]
+}

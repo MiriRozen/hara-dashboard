@@ -1,0 +1,218 @@
+{
+  "run_id": "run-c33471",
+  "title": "סקירה משולבת של מגמות אימוץ בינה מלאכותית בארגונים בינוניים בישראל, כולל חסמי רגולציה, עלויות הטמעה והשפעה על תהליכי גיוס",
+  "requested_by": "מנהל המערכת",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "3.000000",
+  "approved_budget_usd": "3.000000",
+  "spent_usd": "2.418700",
+  "started_at": "2026-08-22T08:00:00Z",
+  "ended_at": "2026-08-22T08:52:19Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת מחקר ראשית לתחומי רגולציה וממשל תאגידי",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.812400",
+      "started_at": "2026-08-22T08:00:01Z",
+      "ended_at": "2026-08-22T08:14:00Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "חוקר שוק",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.601200",
+      "started_at": "2026-08-22T08:00:01Z",
+      "ended_at": "2026-08-22T08:12:40Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "אנליסט עלויות",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.402100",
+      "started_at": "2026-08-22T08:14:00Z",
+      "ended_at": "2026-08-22T08:28:10Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n4",
+      "agent_name": "אנליסטית משאבי אנוש",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.318800",
+      "started_at": "2026-08-22T08:14:00Z",
+      "ended_at": "2026-08-22T08:30:02Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n5",
+      "agent_name": "מבקר איכות",
+      "role": "critic",
+      "tier": "critic",
+      "model": "claude-haiku-4-5",
+      "status": "succeeded",
+      "cost_usd": "0.141200",
+      "started_at": "2026-08-22T08:30:02Z",
+      "ended_at": "2026-08-22T08:40:00Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n6",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.143000",
+      "started_at": "2026-08-22T08:40:00Z",
+      "ended_at": "2026-08-22T08:52:19Z",
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01HC3341:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.420000",
+      "actual_usd": "0.401100",
+      "settled": true,
+      "usage": {
+        "input_tokens": 490,
+        "output_tokens": 6200,
+        "cache_read_tokens": 19000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 5,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01HC3341:t1",
+      "node_id": "n1",
+      "estimated_usd": "0.420000",
+      "actual_usd": "0.411300",
+      "settled": true,
+      "usage": {
+        "input_tokens": 6800,
+        "output_tokens": 6400,
+        "cache_read_tokens": 24000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 4,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01HC3342:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.640000",
+      "actual_usd": "0.601200",
+      "settled": true,
+      "usage": {
+        "input_tokens": 480,
+        "output_tokens": 8100,
+        "cache_read_tokens": 26000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 5,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01HC3343:t0",
+      "node_id": "n3",
+      "estimated_usd": "0.430000",
+      "actual_usd": "0.402100",
+      "settled": true,
+      "usage": {
+        "input_tokens": 9200,
+        "output_tokens": 5100,
+        "cache_read_tokens": 38000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 4000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01HC3344:t0",
+      "node_id": "n4",
+      "estimated_usd": "0.350000",
+      "actual_usd": "0.318800",
+      "settled": true,
+      "usage": {
+        "input_tokens": 8400,
+        "output_tokens": 4200,
+        "cache_read_tokens": 31000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 4000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01HC3345:t0",
+      "node_id": "n5",
+      "estimated_usd": "0.160000",
+      "actual_usd": "0.141200",
+      "settled": true,
+      "usage": {
+        "input_tokens": 7100,
+        "output_tokens": 2100,
+        "cache_read_tokens": 17000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01HC3346:t0",
+      "node_id": "n6",
+      "estimated_usd": "0.180000",
+      "actual_usd": "0.143000",
+      "settled": true,
+      "usage": {
+        "input_tokens": 6900,
+        "output_tokens": 3400,
+        "cache_read_tokens": 15000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 6000,
+        "max_searches_cap": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-22T08:12:40Z",
+      "type": "web_search_performed",
+      "payload": {
+        "count": 14,
+        "source_count": 61
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-22T08:00:00Z",
+      "ceiling_usd": "3.000000",
+      "reason": "initial_approval"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "run_id": "run-48ba13",
+  "title": "מיפוי שותפים פוטנציאליים בגרמניה",
+  "requested_by": "אביב ש.",
+  "status": "failed",
+  "outcome": "failed",
+  "initial_budget_usd": "0.500000",
+  "approved_budget_usd": "0.500000",
+  "spent_usd": "0.041200",
+  "started_at": "2026-08-15T17:20:00Z",
+  "ended_at": "2026-08-15T17:23:11Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "failed",
+      "cost_usd": "0.028840",
+      "started_at": "2026-08-15T17:20:00Z",
+      "ended_at": "2026-08-15T17:23:11Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": null,
+      "status": "pending",
+      "cost_usd": "0.000000",
+      "started_at": null,
+      "ended_at": null,
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "0148BA13A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.500000",
+      "actual_usd": "0.028840",
+      "settled": true,
+      "usage": {
+        "input_tokens": 460,
+        "output_tokens": 3400,
+        "cache_read_tokens": 14000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 2,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 4
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-15T17:23:11Z",
+      "type": "llm_call_failed",
+      "payload": {
+        "error": "invalid_request: context length exceeded",
+        "node_id": "n1"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-15T17:20:00Z",
+      "ceiling_usd": "0.500000",
+      "reason": "initial_approval"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "run_id": "run-9e21d4",
+  "title": "ניתוח מגמות שכר בענף ההייטק",
+  "requested_by": "אביב ש.",
+  "status": "failed",
+  "outcome": "failed",
+  "initial_budget_usd": "0.800000",
+  "approved_budget_usd": "0.800000",
+  "spent_usd": "0.214800",
+  "started_at": "2026-08-23T07:41:12Z",
+  "ended_at": "2026-08-23T07:49:58Z",
+  "cost_is_complete": false,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.214800",
+      "started_at": "2026-08-23T07:41:13Z",
+      "ended_at": "2026-08-23T07:46:02Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "אנליסט שכר",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "failed",
+      "cost_usd": "0.000000",
+      "started_at": "2026-08-23T07:46:02Z",
+      "ended_at": "2026-08-23T07:49:58Z",
+      "visible_summary": "התהליך נעצר באמצע קריאה למודל"
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": null,
+      "status": "pending",
+      "cost_usd": "0.000000",
+      "started_at": null,
+      "ended_at": null,
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H9E21A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.240000",
+      "actual_usd": "0.214800",
+      "settled": true,
+      "usage": {
+        "input_tokens": 470,
+        "output_tokens": 4100,
+        "cache_read_tokens": 17300,
+        "cache_creation_tokens": 0,
+        "web_search_count": 3,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 4
+      }
+    },
+    {
+      "operation_id": "01H9E21B:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.260000",
+      "actual_usd": null,
+      "settled": false,
+      "usage": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-23T07:46:02Z",
+      "type": "budget_reserved",
+      "payload": {
+        "operation_id": "01H9E21B:t0",
+        "amount_usd": "0.260000"
+      }
+    },
+    {
+      "at": "2026-08-23T07:49:58Z",
+      "type": "process_terminated",
+      "payload": {
+        "node_id": "n2",
+        "detail": "worker process exited during provider call"
+      }
+    },
+    {
+      "at": "2026-08-23T07:49:58Z",
+      "type": "budget_reservation_unresolved",
+      "payload": {
+        "operation_id": "01H9E21B:t0",
+        "reserved_usd": "0.260000",
+        "note": "the provider may or may not have billed this call; requires manual reconciliation"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-23T07:41:12Z",
+      "ceiling_usd": "0.800000",
+      "reason": "initial_approval"
+    }
+  ]
+}

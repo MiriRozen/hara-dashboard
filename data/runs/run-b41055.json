@@ -1,0 +1,63 @@
+{
+  "run_id": "run-b41055",
+  "title": "השוואת מסדי נתונים וקטוריים ל-RAG",
+  "requested_by": "אביב ש.",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "0.057860",
+  "approved_budget_usd": "0.057860",
+  "spent_usd": "0.258108",
+  "started_at": "2026-08-25T08:44:02Z",
+  "ended_at": "2026-08-25T08:47:36Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "חוקר תשתיות",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.258108",
+      "started_at": "2026-08-25T08:44:03Z",
+      "ended_at": "2026-08-25T08:47:36Z",
+      "visible_summary": "חיפוש יחיד שהחזיר פלט ארוך בהרבה מהצפוי"
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01HB4105:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.052600",
+      "actual_usd": "0.258108",
+      "settled": true,
+      "usage": {
+        "input_tokens": 446,
+        "output_tokens": 6129,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "web_search_count": 1,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-25T08:47:36Z",
+      "type": "budget_overrun_detected",
+      "payload": {
+        "spent_usd": "0.258108",
+        "ceiling_usd": "0.057860",
+        "operation_id": "01HB4105:t0"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-25T08:44:02Z",
+      "ceiling_usd": "0.057860",
+      "reason": "initial_approval"
+    }
+  ]
+}

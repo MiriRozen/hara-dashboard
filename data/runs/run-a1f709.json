@@ -1,0 +1,45 @@
+{
+  "run_id": "run-a1f709",
+  "title": "בדיקת היתכנות אינטגרציה מול ספק חיצוני",
+  "requested_by": "אביב ש.",
+  "status": "failed",
+  "outcome": "failed",
+  "initial_budget_usd": "0.300000",
+  "approved_budget_usd": "0.300000",
+  "spent_usd": "0.000000",
+  "started_at": "2026-08-21T16:05:40Z",
+  "ended_at": "2026-08-21T16:05:47Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "חוקר אינטגרציות",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "failed",
+      "cost_usd": "0.000000",
+      "started_at": "2026-08-21T16:05:41Z",
+      "ended_at": "2026-08-21T16:05:47Z",
+      "visible_summary": null
+    }
+  ],
+  "operations": [],
+  "events": [
+    {
+      "at": "2026-08-21T16:05:47Z",
+      "type": "llm_call_failed",
+      "payload": {
+        "error": "provider timeout after 600s",
+        "node_id": "n1"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-21T16:05:40Z",
+      "ceiling_usd": "0.300000",
+      "reason": "initial_approval"
+    }
+  ]
+}

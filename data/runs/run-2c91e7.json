@@ -1,0 +1,193 @@
+{
+  "run_id": "run-2c91e7",
+  "title": "סקירת רגולציית פרטיות באיחוד האירופי",
+  "requested_by": "מנהל המערכת",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "0.350000",
+  "approved_budget_usd": "0.950000",
+  "spent_usd": "0.712900",
+  "started_at": "2026-08-18T11:02:18Z",
+  "ended_at": "2026-08-18T11:19:44Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "חוקרת רגולציה",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.402300",
+      "started_at": "2026-08-18T11:02:19Z",
+      "ended_at": "2026-08-18T11:12:07Z",
+      "visible_summary": "נסקרו GDPR ו-AI Act; 22 מקורות"
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "אנליסטית השפעות",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.221400",
+      "started_at": "2026-08-18T11:12:07Z",
+      "ended_at": "2026-08-18T11:16:50Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "מבקר איכות",
+      "role": "critic",
+      "tier": "critic",
+      "model": "claude-haiku-4-5",
+      "status": "succeeded",
+      "cost_usd": "0.061900",
+      "started_at": "2026-08-18T11:16:50Z",
+      "ended_at": "2026-08-18T11:18:20Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n4",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.027300",
+      "started_at": "2026-08-18T11:18:20Z",
+      "ended_at": "2026-08-18T11:19:44Z",
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H2C91A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.180000",
+      "actual_usd": "0.171800",
+      "settled": true,
+      "usage": {
+        "input_tokens": 480,
+        "output_tokens": 5920,
+        "cache_read_tokens": 18400,
+        "cache_creation_tokens": 0,
+        "web_search_count": 4,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01H2C91A:t1",
+      "node_id": "n1",
+      "estimated_usd": "0.180000",
+      "actual_usd": "0.230500",
+      "settled": true,
+      "usage": {
+        "input_tokens": 6310,
+        "output_tokens": 6100,
+        "cache_read_tokens": 22800,
+        "cache_creation_tokens": 0,
+        "web_search_count": 5,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01H2C91B:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.240000",
+      "actual_usd": "0.221400",
+      "settled": true,
+      "usage": {
+        "input_tokens": 7100,
+        "output_tokens": 4200,
+        "cache_read_tokens": 31000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 4000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01H2C91C:t0",
+      "node_id": "n3",
+      "estimated_usd": "0.070000",
+      "actual_usd": "0.061900",
+      "settled": true,
+      "usage": {
+        "input_tokens": 4300,
+        "output_tokens": 1200,
+        "cache_read_tokens": 9800,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01H2C91D:t0",
+      "node_id": "n4",
+      "estimated_usd": "0.045000",
+      "actual_usd": "0.027300",
+      "settled": true,
+      "usage": {
+        "input_tokens": 3100,
+        "output_tokens": 1450,
+        "cache_read_tokens": 7200,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 3000,
+        "max_searches_cap": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-18T11:08:41Z",
+      "type": "budget_overrun_80",
+      "payload": {
+        "spent_usd": "0.284000",
+        "ceiling_usd": "0.350000"
+      }
+    },
+    {
+      "at": "2026-08-18T11:08:41Z",
+      "type": "approval_requested",
+      "payload": {
+        "trigger": "mid_run_extension",
+        "requested_extension_usd": "0.600000",
+        "recommended_extension_usd": "0.600000"
+      }
+    },
+    {
+      "at": "2026-08-18T11:09:55Z",
+      "type": "approval_resolved",
+      "payload": {
+        "decision": "approved",
+        "by": "מנהל המערכת",
+        "waited_seconds": 74
+      }
+    },
+    {
+      "at": "2026-08-18T11:09:55Z",
+      "type": "budget_ceiling_extended",
+      "payload": {
+        "from_usd": "0.350000",
+        "to_usd": "0.950000"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-18T11:02:18Z",
+      "ceiling_usd": "0.350000",
+      "reason": "initial_approval"
+    },
+    {
+      "at": "2026-08-18T11:09:55Z",
+      "ceiling_usd": "0.950000",
+      "reason": "mid_run_extension_approved"
+    }
+  ]
+}

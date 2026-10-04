@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הארה — משימת בית | מרכז בקרת ריצות</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --amber:        #B8740A;
+      --amber-light:  #D49830;
+      --amber-dark:   #8E5708;
+      --amber-tint:   #FFF4E0;
+      --pink-bg:      #FCE8E8;
+      --pink-border:  #E5A0A0;
+      --pink-text:    #B91C1C;
+      --green-bg:     #ECFDF5;
+      --green-border: #6EE7B7;
+      --green-text:   #065F46;
+      --code-bg:      #F4F4F4;
+      --code-border:  #E0E0E0;
+      --text:         #1F2937;
+      --text-muted:   #6B7280;
+      --bg:           #FAFAF7;
+      --surface:      #FFFFFF;
+      --border:       #E5E7EB;
+      --font-sans:    'Heebo', system-ui, -apple-system, sans-serif;
+      --font-mono:    'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+      --radius:       8px;
+      --radius-lg:    12px;
+      --shadow-sm:    0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md:    0 4px 24px rgba(184, 116, 10, 0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.7;
+      color: var(--text); background: var(--bg);
+      background-image:
+        radial-gradient(circle at 0% 0%, rgba(184, 116, 10, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(184, 116, 10, 0.04) 0%, transparent 40%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    .page { max-width: 880px; margin: 0 auto; padding: 56px 24px 80px; }
+    .doc {
+      background: var(--surface); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); padding: 64px 64px 56px;
+      position: relative; overflow: hidden;
+    }
+    .doc::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+      background: linear-gradient(90deg, var(--amber-light), var(--amber), var(--amber-dark));
+    }
+    .brand { text-align: center; margin-top: 8px; margin-bottom: 32px; }
+    .brand__logo {
+      font-size: 64px; font-weight: 800; color: var(--amber);
+      letter-spacing: -0.02em; line-height: 1; margin: 0 0 6px;
+    }
+    .brand__tagline { font-size: 17px; color: var(--text-muted); font-weight: 400; margin: 0; }
+    .banner {
+      background: var(--amber-tint); border: 1.5px solid var(--amber);
+      border-radius: var(--radius); padding: 14px 24px; text-align: center;
+      font-size: 16px; margin: 0 auto 36px; max-width: 660px;
+    }
+    .banner strong { color: var(--amber-dark); }
+    .doc-title {
+      text-align: center; font-size: 30px; font-weight: 700; margin: 8px 0 0;
+      padding-bottom: 18px; border-bottom: 2.5px solid var(--amber);
+      letter-spacing: -0.01em;
+    }
+    .intro { margin-top: 32px; font-size: 16.5px; }
+    .intro p { margin: 0 0 12px; }
+    .highlight {
+      background: var(--amber-tint); border: 1.5px solid var(--amber);
+      border-radius: var(--radius); padding: 16px 22px; margin: 24px 0;
+      font-size: 15.5px; line-height: 1.65;
+    }
+    .highlight strong { color: var(--amber-dark); }
+    .highlight--warn {
+      background: var(--pink-bg); border-color: var(--pink-border); color: var(--pink-text);
+    }
+    .highlight--ok {
+      background: var(--green-bg); border-color: var(--green-border); color: var(--green-text);
+    }
+    .highlight--ok strong { color: var(--green-text); }
+    h1 {
+      font-size: 28px; font-weight: 700; color: var(--amber); margin: 56px 0 18px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--amber); letter-spacing: -0.01em;
+    }
+    h2 { font-size: 21px; font-weight: 700; color: var(--amber); margin: 36px 0 14px; }
+    h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+    p { margin: 0 0 12px; }
+    ul, ol { padding-right: 24px; padding-left: 0; margin: 8px 0 16px; }
+    ul { list-style: none; padding-right: 0; }
+    ul li { position: relative; padding-right: 22px; margin-bottom: 6px; }
+    ul li::before {
+      content: ''; position: absolute; right: 6px; top: 0.75em; width: 6px; height: 6px;
+      background: var(--amber); border-radius: 50%;
+    }
+    ol li { margin-bottom: 6px; padding-right: 6px; }
+    ol li::marker { color: var(--amber); font-weight: 700; }
+    pre, .code-block {
+      direction: ltr; text-align: left; background: var(--code-bg);
+      border: 1px solid var(--code-border); border-radius: var(--radius);
+      padding: 14px 18px; margin: 12px 0 20px; overflow-x: auto;
+      font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; white-space: pre;
+    }
+    code {
+      font-family: var(--font-mono); font-size: 0.92em; background: var(--code-bg);
+      border: 1px solid var(--code-border); border-radius: 4px; padding: 1px 6px;
+      color: var(--amber-dark); direction: ltr; display: inline-block;
+    }
+    pre code { background: none; border: 0; padding: 0; color: inherit; display: inline; }
+    .c-comment { color: #6B7280; }
+    table.t {
+      width: 100%; border-collapse: collapse; margin: 18px 0 12px; font-size: 15px;
+      box-shadow: var(--shadow-sm); border-radius: var(--radius); overflow: hidden;
+    }
+    table.t thead th {
+      background: var(--amber); color: white; font-weight: 600; text-align: right;
+      padding: 12px 16px; font-size: 15px;
+    }
+    table.t thead th:last-child { text-align: center; }
+    table.t tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); background: white; }
+    table.t tbody tr:last-child td { border-bottom: none; }
+    table.t tbody tr:nth-child(even) td { background: #FBF8F2; }
+    table.t .weight { text-align: center; font-weight: 700; color: var(--amber-dark); width: 80px; white-space: nowrap; }
+    .lie {
+      border-right: 3px solid var(--amber); background: #FCFAF5; padding: 14px 20px;
+      margin: 16px 0; border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .lie p { margin: 0 0 6px; }
+    .lie p:last-child { margin: 0; }
+    .lie .bad { color: var(--pink-text); font-weight: 600; }
+    .lie .good { color: var(--green-text); font-weight: 600; }
+    .check { list-style: none; padding-right: 0; }
+    .check li { position: relative; padding-right: 30px; margin-bottom: 8px; }
+    .check li::before {
+      content: '☐'; position: absolute; right: 0; top: -1px;
+      font-size: 17px; color: var(--amber); background: none; width: auto; height: auto;
+      border-radius: 0;
+    }
+    .closing {
+      margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center;
+    }
+    .closing__big {
+      font-size: 44px; font-weight: 800; color: var(--amber); margin: 0 0 14px; letter-spacing: -0.02em;
+    }
+    .closing__team { font-size: 16px; margin: 0 0 10px; }
+    .closing__contact {
+      font-size: 14px; color: var(--text-muted); margin: 0 0 6px;
+      direction: ltr; unicode-bidi: plaintext;
+    }
+    .closing__contact a {
+      color: var(--amber-dark); text-decoration: none;
+      border-bottom: 1px dotted var(--amber-light); transition: color 0.15s ease;
+    }
+    .closing__contact a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+    .closing__note { font-size: 13.5px; color: var(--text-muted); margin: 8px 0 0; }
+    @media (prefers-reduced-motion: no-preference) {
+      .doc { animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+      @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    }
+    @media (max-width: 720px) {
+      .page { padding: 24px 12px 48px; }
+      .doc { padding: 32px 22px; border-radius: 10px; }
+      .brand__logo { font-size: 48px; }
+      .doc-title { font-size: 22px; }
+      h1 { font-size: 22px; margin-top: 40px; }
+      h2 { font-size: 18px; } h3 { font-size: 16px; }
+      pre, .code-block { font-size: 12.5px; padding: 12px; }
+      table.t { font-size: 14px; }
+      table.t thead th, table.t tbody td { padding: 10px 12px; }
+      .closing__big { font-size: 34px; }
+    }
+    @media print {
+      body { background: white; }
+      .page { padding: 0; max-width: none; }
+      .doc { box-shadow: none; border-radius: 0; padding: 24px 32px; animation: none; }
+      .doc::before { display: none; }
+      h1 { page-break-after: avoid; }
+      .closing, .highlight, table.t, .lie { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="doc">
+
+      <header class="brand">
+        <h1 class="brand__logo">הארה</h1>
+        <p class="brand__tagline">תאורה חכמה שמגיעה לכל בית</p>
+      </header>
+
+      <div class="banner">
+        היקף מוערך: <strong>3–5 ימים בקצב חלקי</strong> (כ־12–18 שעות עבודה בפועל)
+        &nbsp;|&nbsp; התמחות נבדקת: <strong>עיצוב וממשק</strong>
+      </div>
+
+      <h2 class="doc-title">משימת בית — מרכז בקרת ריצות</h2>
+
+      <section class="intro">
+        <p>שלום,</p>
+        <p>תודה על ההתעניינות בתפקיד. המשימה הזו מבוססת על צורך אמיתי אצלנו — דשבורד שאנחנו
+          צריכים ועדיין לא בנינו. בחרנו אותה כי היא בדיוק סוג העבודה שתעשי אצלנו.</p>
+        <p>כמה דברים חשובים לפני שמתחילים:</p>
+        <ul>
+          <li>זו משימת <strong>Frontend בלבד</strong>. אין שרת, אין בסיס נתונים, אין מפתחות API. כל הנתונים מצורפים כקבצים קפואים.</li>
+          <li>אנחנו <strong>לא מצפים למוצר מוגמר</strong> ולא לקוד Production. אנחנו מצפים לדשבורד אחד שעושה את העבודה שלו היטב.</li>
+          <li>מוטב <strong>ליבה מצומצמת שעובדת ומעוצבת היטב</strong> מאשר הרבה מסכים חצי־גמורים. זה נאמר ברצינות, וזה גם מה שנקבל בציון.</li>
+        </ul>
+
+        <div class="highlight">
+          <strong>שימוש ב-AI — מותר ומומלץ.</strong>
+          (Claude, ChatGPT, Copilot, Cursor וכו׳). אנחנו עובדים ככה כל יום.
+          נבקש רק לציין ב-README במה השתמשת, ואילו החלטות היו שלך.
+        </div>
+
+        <div class="highlight highlight--ok">
+          <strong>שאלות — מוזמנת, בכל שלב.</strong>
+          אם משהו לא ברור, זו לא נקודת חובה שצריך "לפצח" לבד. תשאלי, נענה מהר.
+          שאלה טובה באמצע היא סימן טוב, לא סימן רע.
+        </div>
+      </section>
+
+      <h1>רקע — מה המערכת עושה</h1>
+      <p>אנחנו מפעילים <strong>צוותי סוכני AI</strong>. כל <em>ריצה</em> היא צוות שמבצע משימה
+        אחת: סוכן מחקר אוסף מידע, אנליסט מנתח, מבקר בודק, וכותב מפיק דוח.</p>
+      <p>לכל ריצה מאושר <strong>תקציב</strong> מראש, כי כל קריאה למודל עולה כסף אמיתי.
+        המערכת עוקבת אחרי ההוצאה, ובמצבי קצה מגיבה: מבקשת אישור להרחבת תקציב באמצע ריצה,
+        או מקטינה את היקף העבודה כדי להיכנס לתקציב.</p>
+      <p>המערכת גם רושמת ביושר את מה שהיא <em>לא</em> יודעת. תהליך יכול למות באמצע קריאה
+        למודל, ואז לא ידוע אם חויבנו עליה — במקרה כזה היא לא מנחשת ולא משלימה את החסר,
+        אלא מסמנת שהמידע חסר.</p>
+      <p>כל הנתונים האלה נאספים ונשמרים אצלנו. <strong>מה שאין — זה מסך שמראה אותם.</strong>
+        מנהל אצלנו לא יכול לענות היום על שאלות פשוטות:</p>
+      <ul>
+        <li>הריצה הזו הצליחה?</li>
+        <li>היא עלתה כמה שציפינו?</li>
+        <li>ויתרנו על איכות בדרך כדי להיכנס לתקציב?</li>
+        <li>מישהו אישר תקציב נוסף באמצע? כמה? למה?</li>
+        <li>איפה הכסף נשרף — איזה סוכן, איזה מודל?</li>
+        <li>יש כאן משהו שדורש בירור אנושי לפני שממשיכים הלאה?</li>
+      </ul>
+
+      <h1>המשימה</h1>
+      <p>לעצב ולבנות <strong>דשבורד אחד בעברית</strong> שעונה על השאלות האלה.</p>
+      <p>המשימה היא בראש ובראשונה <strong>משימת עיצוב מידע</strong>. הקוד חשוב, אבל מה שאנחנו
+        באמת בודקים הוא: איך את מחליטה מה להראות, מה להבליט, ומה להסתיר — ואיך את מציגה
+        מצב מסובך בלי לפשט אותו יתר על המידה.</p>
+
+      <h2>הנתונים</h2>
+      <p>בתיקייה <code>data/</code> תמצאי:</p>
+      <ul>
+        <li><code>runs.json</code> — רשימת 13 ריצות</li>
+        <li><code>runs/&lt;run_id&gt;.json</code> — פירוט מלא לכל ריצה</li>
+        <li><code>DATA-CONTRACT.md</code> — <strong>תיעוד מלא של כל שדה.</strong> כדאי להתחיל משם.</li>
+      </ul>
+      <p>המבנה זהה למבנה האמיתי אצלנו, כך שאפשר יהיה לחבר את הדשבורד לשרת אמיתי בהמשך
+        בלי לשכתב את שכבת התצוגה. אין צורך לכתוב שרת — טעינה של קובץ סטטי מספיקה לגמרי.</p>
+
+      <h2>שני המסכים הנדרשים</h2>
+
+      <h3>1. סקירת ריצות</h3>
+      <p>מסך שמאפשר להבין <em>במבט אחד</em> מה מצב הריצות. לפחות:</p>
+      <ul>
+        <li>רשימה או טבלה של כל הריצות</li>
+        <li>לכל ריצה: מצב, תוצאה, עלות מול תקציב, מתי, מי ביקש</li>
+        <li>סינון — לפחות לפי מצב הריצה</li>
+        <li>מעבר לריצה בודדת</li>
+      </ul>
+      <p>אם את רוצה להוסיף אזור סיכום עליון (סה״כ הוצאה, כמה ריצות דורשות תשומת לב) — מצוין,
+        אבל רק אם המספרים שם באמת נכונים.</p>
+
+      <h3>2. ריצה בודדת</h3>
+      <p>מסך שמסביר <em>מה קרה</em> בריצה אחת. לפחות:</p>
+      <ul>
+        <li>פירוט העלות לפי סוכן — מי צרך כמה</li>
+        <li>מצב התקציב: כמה אושר, כמה הוצא, ומה קרה לתקרה לאורך הריצה</li>
+        <li>ציר האירועים — מה קרה ומתי (אישורים, הרחבות, הורדות איכות, חריגות)</li>
+        <li>נתוני שימוש: טוקנים, חיפושי רשת, מודל</li>
+      </ul>
+
+      <h1>דרישות עיצוב וממשק</h1>
+      <ul>
+        <li><strong>עברית ו-RTL מלא.</strong> כולל טבלאות, מספרים, תאריכים וכל רכיב גרפי.</li>
+        <li><strong>מצבים.</strong> טעינה, ריק, שגיאה — לא רק המסלול המוצלח.</li>
+        <li><strong>נגישות.</strong> ניגודיות תקינה, ניווט מקלדת, טקסט חלופי למידע שמוצג רק בצבע.
+          <em>אסור</em> שצבע יהיה המידע היחיד — מי שלא מבחין בין אדום לירוק צריך להבין את המסך.</li>
+        <li><strong>רספונסיביות.</strong> דסקטופ הוא המסך העיקרי. מובייל — שלא יישבר.</li>
+        <li><strong>כסף ומספרים.</strong> שדות <code>_usd</code> הם מחרוזות, לא מספרים (ראי את חוזה
+          הנתונים). פורמט אחיד ועקבי לאורך כל הממשק.</li>
+      </ul>
+
+      <h2>הסטאק שלנו</h2>
+      <p>אנחנו עובדים ב-<strong>Next.js 15 + React 19 + TypeScript + Tailwind</strong>.
+        אם נוח לך בסטאק הזה — מעולה, זה מה שתעבדי בו. אם את מעדיפה משהו אחר שאת חזקה בו יותר,
+        זה לגיטימי לחלוטין — רק כתבי ב-README למה בחרת.</p>
+      <p>אין צורך בספריית גרפים מסוימת. אם גרף פשוט או טבלה מעוצבת עונים על הצורך — עדיף.</p>
+
+      <h1>מה לא נדרש</h1>
+      <p>כדי לשמור על היקף הוגן, אין צורך ב:</p>
+      <ul>
+        <li>שרת, בסיס נתונים או API אמיתי</li>
+        <li>התחברות, משתמשים והרשאות</li>
+        <li>עדכונים בזמן אמת / WebSocket</li>
+        <li>אפליקציית מובייל</li>
+        <li>עריכה או שינוי של נתונים — הדשבורד הוא לקריאה בלבד</li>
+        <li>כיסוי בדיקות מלא</li>
+        <li>תרגום לאנגלית / i18n מלא</li>
+      </ul>
+
+      <h1>בדיקות</h1>
+      <p>אנחנו לא מצפים לכיסוי בדיקות מלא. כן חשוב לנו לראות <strong>שאת בודקת את עצמך
+        בשיטה</strong>, ולא מניחה שמשהו עובד.</p>
+      <ul>
+        <li>כמה בדיקות יחידה על הלוגיקה — בעיקר חישובים ופורמט.
+          <code>Vitest</code> + <code>Testing Library</code> זו בחירה טובה, אבל כל כלי בסדר.</li>
+        <li>מעבר על הנתונים בדפדפן לפני הגשה — על כל הריצות, לא רק על אחת או שתיים.</li>
+        <li>צילומי מסך ב-README של המצבים המרכזיים.</li>
+      </ul>
+
+      <h1>Bonus — לא חובה</h1>
+      <p>רק אם הליבה גמורה ומלוטשת, ורק אם נשאר זמן:</p>
+      <ul>
+        <li>מצב כהה (Dark mode)</li>
+        <li>השוואת עלות מוערכת מול בפועל — איפה ההערכה שלנו פספסה</li>
+        <li>תצוגת יעילות מטמון (<code>cache_read_tokens</code> מול הקלט)</li>
+        <li>ייצוא לקובץ CSV</li>
+        <li>מיון מתקדם או חיפוש חופשי</li>
+      </ul>
+      <p>Bonus לעולם לא יבוא במקום ליבה טובה, ולא יפצה עליה.</p>
+
+      <h1>קריטריונים להערכה</h1>
+      <table class="t">
+        <thead><tr><th>קריטריון</th><th>מה נבדוק</th><th>משקל</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>עיצוב, היררכיה וחוויית שימוש</td>
+            <td>בהירות המסך, היררכיה ויזואלית, RTL, נגישות ומצבי ממשק</td>
+            <td class="weight">35%</td>
+          </tr>
+          <tr>
+            <td>דיוק ותועלת התצוגה</td>
+            <td>האם מנהל שמסתכל על המסך מקבל תמונת מצב נכונה ומועילה</td>
+            <td class="weight">25%</td>
+          </tr>
+          <tr>
+            <td>איכות קוד ומבנה</td>
+            <td>מבנה רכיבים, הפרדת אחריות, שמות, טיפוסים, קריאוּת</td>
+            <td class="weight">20%</td>
+          </tr>
+          <tr>
+            <td>תיעוד, בדיקות ותהליך</td>
+            <td>README מדויק, הסבר החלטות עיצוב, איך בדקת, מה לא הושלם ולמה</td>
+            <td class="weight">20%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>מה להגיש</h1>
+      <ol>
+        <li>קישור ל-GitHub Repository (ציבורי)</li>
+        <li><strong>README</strong> עם: הוראות הרצה שעובדות, החלטות העיצוב המרכזיות והנימוק להן,
+          איך בדקת, מה לא הושלם ולמה, ואיפה השתמשת ב-AI</li>
+        <li>צילומי מסך של המצבים המרכזיים</li>
+        <li>אם אפשר — קישור לדמו חי (Vercel / Netlify). לא חובה.</li>
+      </ol>
+      <p>Commits קטנים ותיאוריים עוזרים לנו להבין את תהליך העבודה. לא קריטריון בפני עצמו,
+        אבל זה נראה טוב.</p>
+
+      <div class="highlight highlight--ok">
+        <strong>ולסיום — מה שבאמת מעניין אותנו.</strong>
+        לא אם הספקת הכול. אלא איך את חושבת על מידע, ואיך את מחליטה מה מגיע לתשומת הלב
+        של מי שמסתכל על המסך. דשבורד ממוקד עם שלוש החלטות טובות שווה יותר מדשבורד עמוס
+        בלי אף אחת.
+      </div>
+
+      <footer class="closing">
+        <h2 class="closing__big">בהצלחה!</h2>
+        <p class="closing__team">צוות הגיוס — הארה</p>
+        <p class="closing__contact">
+          <a href="https://wa.me/972515420101" target="_blank" rel="noopener">WhatsApp&nbsp;051-542-0101</a>
+        </p>
+        <p class="closing__note">
+          לשאלות — בוואטסאפ, בכל שלב של המשימה. זו דרך ההתקשרות הזמינה;
+          אם נדרשת דרך נוספת, אפשר לבקש שם.
+        </p>
+      </footer>
+
+    </article>
+  </main>
+</body>
+</html>

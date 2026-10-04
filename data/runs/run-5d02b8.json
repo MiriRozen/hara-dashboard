@@ -1,0 +1,86 @@
+{
+  "run_id": "run-5d02b8",
+  "title": "ניתוח משוב לקוחות — רבעון 3",
+  "requested_by": "אורית ל.",
+  "status": "running",
+  "outcome": null,
+  "initial_budget_usd": "0.750000",
+  "approved_budget_usd": "0.750000",
+  "spent_usd": "0.194500",
+  "started_at": "2026-08-25T13:20:11Z",
+  "ended_at": null,
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.194500",
+      "started_at": "2026-08-25T13:20:12Z",
+      "ended_at": "2026-08-25T13:24:03Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "אנליסטית סנטימנט",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "running",
+      "cost_usd": "0.000000",
+      "started_at": "2026-08-25T13:24:03Z",
+      "ended_at": null,
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": null,
+      "status": "pending",
+      "cost_usd": "0.000000",
+      "started_at": null,
+      "ended_at": null,
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H5D02A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.210000",
+      "actual_usd": "0.194500",
+      "settled": true,
+      "usage": {
+        "input_tokens": 470,
+        "output_tokens": 3900,
+        "cache_read_tokens": 15800,
+        "cache_creation_tokens": 0,
+        "web_search_count": 3,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 4
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-25T13:20:11Z",
+      "type": "budget_reserved",
+      "payload": {
+        "scope": "run-5d02b8",
+        "amount_usd": "0.210000"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-25T13:20:11Z",
+      "ceiling_usd": "0.750000",
+      "reason": "initial_approval"
+    }
+  ]
+}

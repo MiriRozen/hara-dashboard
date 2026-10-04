@@ -1,0 +1,130 @@
+{
+  "run_id": "run-77de40",
+  "title": "ניתוח תמחור מתחרים לקראת השקה",
+  "requested_by": "אורית ל.",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "0.400000",
+  "approved_budget_usd": "0.400000",
+  "spent_usd": "0.283600",
+  "started_at": "2026-08-19T14:31:00Z",
+  "ended_at": "2026-08-19T14:41:12Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.198400",
+      "started_at": "2026-08-19T14:31:01Z",
+      "ended_at": "2026-08-19T14:37:20Z",
+      "visible_summary": "הופעל cap מוקטן: 2 חיפושים במקום 4"
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "אנליסט תמחור",
+      "role": "analysis",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.061300",
+      "started_at": "2026-08-19T14:37:20Z",
+      "ended_at": "2026-08-19T14:39:40Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.023900",
+      "started_at": "2026-08-19T14:39:40Z",
+      "ended_at": "2026-08-19T14:41:12Z",
+      "visible_summary": "אורך הדוח קוצר עקב מגבלת תקציב"
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H77DEA:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.210000",
+      "actual_usd": "0.198400",
+      "settled": true,
+      "usage": {
+        "input_tokens": 460,
+        "output_tokens": 4100,
+        "cache_read_tokens": 16200,
+        "cache_creation_tokens": 0,
+        "web_search_count": 2,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 2
+      }
+    },
+    {
+      "operation_id": "01H77DEB:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.080000",
+      "actual_usd": "0.061300",
+      "settled": true,
+      "usage": {
+        "input_tokens": 4900,
+        "output_tokens": 1800,
+        "cache_read_tokens": 11000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 0
+      }
+    },
+    {
+      "operation_id": "01H77DEC:t0",
+      "node_id": "n3",
+      "estimated_usd": "0.030000",
+      "actual_usd": "0.023900",
+      "settled": true,
+      "usage": {
+        "input_tokens": 2800,
+        "output_tokens": 900,
+        "cache_read_tokens": 6100,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 1200,
+        "max_searches_cap": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-19T14:31:01Z",
+      "type": "execution_cap_downgraded",
+      "payload": {
+        "node_id": "n1",
+        "from_searches": 4,
+        "to_searches": 2,
+        "reason": "insufficient_remaining_budget"
+      }
+    },
+    {
+      "at": "2026-08-19T14:39:40Z",
+      "type": "execution_cap_downgraded",
+      "payload": {
+        "node_id": "n3",
+        "from_max_tokens": 3000,
+        "to_max_tokens": 1200,
+        "reason": "insufficient_remaining_budget"
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-19T14:31:00Z",
+      "ceiling_usd": "0.400000",
+      "reason": "initial_approval"
+    }
+  ]
+}

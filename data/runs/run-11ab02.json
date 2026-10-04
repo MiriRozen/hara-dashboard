@@ -1,0 +1,65 @@
+{
+  "run_id": "run-11ab02",
+  "title": "ניתוח נטישת משתמשים באפליקציה",
+  "requested_by": "אורית ל.",
+  "status": "completed",
+  "outcome": "succeeded",
+  "initial_budget_usd": "0.600000",
+  "approved_budget_usd": "0.600000",
+  "spent_usd": "0.412300",
+  "started_at": "2026-08-12T09:30:00Z",
+  "ended_at": "2026-08-12T09:41:02Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "רכזת המחקר",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.288610",
+      "started_at": "2026-08-12T09:30:00Z",
+      "ended_at": "2026-08-12T09:41:02Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.123690",
+      "started_at": "2026-08-12T09:30:00Z",
+      "ended_at": "2026-08-12T09:41:02Z",
+      "visible_summary": null
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "0111AB02A:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.600000",
+      "actual_usd": "0.288610",
+      "settled": true,
+      "usage": {
+        "input_tokens": 460,
+        "output_tokens": 3400,
+        "cache_read_tokens": 14000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 2,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 4
+      }
+    }
+  ],
+  "events": [],
+  "budget_timeline": [
+    {
+      "at": "2026-08-12T09:30:00Z",
+      "ceiling_usd": "0.600000",
+      "reason": "initial_approval"
+    }
+  ]
+}

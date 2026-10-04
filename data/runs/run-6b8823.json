@@ -1,0 +1,126 @@
+{
+  "run_id": "run-6b8823",
+  "title": "סיכום ממצאי סקר אבטחת מידע",
+  "requested_by": "מנהל המערכת",
+  "status": "partial",
+  "outcome": "partial",
+  "initial_budget_usd": "0.400000",
+  "approved_budget_usd": "0.400000",
+  "spent_usd": "0.400000",
+  "started_at": "2026-08-20T10:00:00Z",
+  "ended_at": "2026-08-20T10:12:35Z",
+  "cost_is_complete": true,
+  "nodes": [
+    {
+      "node_id": "n1",
+      "agent_name": "חוקרת אבטחה",
+      "role": "research",
+      "tier": "worker",
+      "model": "claude-sonnet-4-6",
+      "status": "succeeded",
+      "cost_usd": "0.372000",
+      "started_at": "2026-08-20T10:00:01Z",
+      "ended_at": "2026-08-20T10:11:10Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n2",
+      "agent_name": "מבקר איכות",
+      "role": "critic",
+      "tier": "critic",
+      "model": "claude-haiku-4-5",
+      "status": "succeeded",
+      "cost_usd": "0.028000",
+      "started_at": "2026-08-20T10:11:10Z",
+      "ended_at": "2026-08-20T10:12:35Z",
+      "visible_summary": null
+    },
+    {
+      "node_id": "n3",
+      "agent_name": "כותב הדוח",
+      "role": "reporter",
+      "tier": "worker",
+      "model": null,
+      "status": "pending",
+      "cost_usd": "0.000000",
+      "started_at": null,
+      "ended_at": null,
+      "visible_summary": "לא הופעל: התקציב מוצה"
+    }
+  ],
+  "operations": [
+    {
+      "operation_id": "01H6B882:t0",
+      "node_id": "n1",
+      "estimated_usd": "0.380000",
+      "actual_usd": "0.372000",
+      "settled": true,
+      "usage": {
+        "input_tokens": 500,
+        "output_tokens": 7100,
+        "cache_read_tokens": 24000,
+        "cache_creation_tokens": 0,
+        "web_search_count": 5,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 5
+      }
+    },
+    {
+      "operation_id": "01H6B883:t0",
+      "node_id": "n2",
+      "estimated_usd": "0.030000",
+      "actual_usd": "0.028000",
+      "settled": true,
+      "usage": {
+        "input_tokens": 3200,
+        "output_tokens": 800,
+        "cache_read_tokens": 5100,
+        "cache_creation_tokens": 0,
+        "web_search_count": 0,
+        "max_tokens_cap": 2000,
+        "max_searches_cap": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-08-20T10:11:10Z",
+      "type": "budget_hard_stop_95",
+      "payload": {
+        "spent_usd": "0.372000",
+        "ceiling_usd": "0.400000"
+      }
+    },
+    {
+      "at": "2026-08-20T10:12:35Z",
+      "type": "approval_requested",
+      "payload": {
+        "trigger": "mid_run_extension",
+        "requested_extension_usd": "0.250000"
+      }
+    },
+    {
+      "at": "2026-08-20T10:14:35Z",
+      "type": "approval_denied",
+      "payload": {
+        "decision": "denied",
+        "reason": "timeout_no_response",
+        "waited_seconds": 120
+      }
+    },
+    {
+      "at": "2026-08-20T10:14:35Z",
+      "type": "budget_exhausted",
+      "payload": {
+        "remaining_nodes": 1
+      }
+    }
+  ],
+  "budget_timeline": [
+    {
+      "at": "2026-08-20T10:00:00Z",
+      "ceiling_usd": "0.400000",
+      "reason": "initial_approval"
+    }
+  ]
+}

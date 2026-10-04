@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.log
+# generated while building the workbook; the packaged .twbx is the deliverable
+tableau/extracts/
+tableau/hara-runs.twb
+tableau/~*
